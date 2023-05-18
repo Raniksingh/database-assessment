@@ -49,12 +49,17 @@ for analysis by Database Migration Assessment.
                     -CollectionUserPass  ** Specified if a custom username will be used
                         or
                     -useDefaultCreds  ** Specify if default credentials coded in the app should be used
+
+            Run .\CreateUserForAssessmentWithSQLAuth.bat help to view the usage
+
             - CreateUserForAssessmentWithWindowsAuth.bat
                 The following parameters can be specified:
                     -collectionUserName  ** Specified if a custom username will be used
                     -CollectionUserPass  ** Specified if a custom username will be used
                         or
                     -useDefaultCreds  ** Specify if default credentials coded in the app should be used
+
+             Run .\CreateUserForAssessmentWithWindowsAuth.bat help to view the usage
 
 3. Execution
 ------------
@@ -88,12 +93,13 @@ for analysis by Database Migration Assessment.
     a) From a powershell session on the server you would like to collect data on, execute the following command:
     
         For a default instance:
-            .\ManageSqlServerPerfmonDatset.bat -operation create
+            .\ManageSqlServerPerfmonDatset.bat create
 
         For a named instance:
-            .\ManageSqlServerPerfmonDatset.bat -operation create -mssqlInstanceName [instance name]
+            .\ManageSqlServerPerfmonDatset.bat create managed [InstanceName]
 
-        The script will create a permon data set that will collect the above metrics at a 1 minute interval for 8 days.  The dataset will automatically stop after 8 days of collection.  To get the most accurate statistics, it would be good to have this collection run over the busiest time for the server.
+        The script will create a perfmon data set that will collect the above metrics at a 1 minute interval for 8 days.  The dataset will automatically stop after 8 days of collection.  To get the most accurate statistics, it would be good to have this collection run over the busiest time for the server.
+        Run .\ManageSqlServerPerfmonDatset.bat help command to view the usage
 
     b)  When the perfmon dataset completes or if you would like to execute the collection sooner, execute the following command and return the subsequent .zip file to Google.
 
@@ -102,6 +108,8 @@ for analysis by Database Migration Assessment.
 
         If the default user was created in the above step:
             .\RunAssessment.bat -useDefaultCreds
+
+        Run .\RunAssessment.bat help command to view the usage
 
         Notes:
             1) Google Database Migration Assessment Data Extractor extracts data for the entire database.

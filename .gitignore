@@ -137,6 +137,9 @@ dmypy.json
 .ds_store
 .DS_Store
 
+# Intellij
+.idea*
+
 # vscode
 # .vscode
 
@@ -165,6 +168,6 @@ scripts/collector/oracle/output/
 scripts/collector/oracle/privs.sql
 scripts/collector/oracle/VERSION.txt
 scripts/collector/sqlserver/output/
-!scripts/collector/sqlserver/sqlsrv.csv
+scripts/collector/sqlserver/sqlsrv.csv
 !scripts/collector/sqlserver/perfmon_header.csv
 scripts/collector/oracle/login.sql
